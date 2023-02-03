@@ -1,0 +1,11 @@
+{
+  "name": "casa-de-cambio",
+  "version": "1.0.0",
+  "description": "Proyecto: casa de cambio utilizando una api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Javier Villca",
+  "license": "ISC"
+}
