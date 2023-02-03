@@ -1,0 +1,15 @@
+.listado__monedas{
+    width: 50%;
+}
+
+.item__moneda{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+.seleccionado{
+    background: blue;
+    color: white;
+}
