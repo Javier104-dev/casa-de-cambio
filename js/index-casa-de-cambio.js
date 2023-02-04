@@ -1,13 +1,20 @@
 import { mostrarMonedas } from "./services.js";
-import { crearListaMonedas } from "./manipular-elementos-html.js";
+import { crearListaMonedas, crearTablaDeCambios, mostrarMensaje} from "./manipular-elementos-html.js";
 
 const listarMonedas = async () => {
     const listaMonedas = await mostrarMonedas();
     const llavesObjeto = Object.keys(listaMonedas.rates);
-
     llavesObjeto.forEach((moneda)=>{
         crearListaMonedas(moneda);
     } );
 }
 
+const mostrarListaCambios  = async (monedaSeleccionada) => {
+    mostrarMensaje();
+    const listadoDeCambios = await mostrarMonedas(undefined, monedaSeleccionada);
+    crearTablaDeCambios(listadoDeCambios);
+}
+
 listarMonedas();
+
+export {mostrarListaCambios}

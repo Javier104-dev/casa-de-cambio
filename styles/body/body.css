@@ -13,3 +13,7 @@
     background: blue;
     color: white;
 }
+.body{
+    display: flex;
+
+}
