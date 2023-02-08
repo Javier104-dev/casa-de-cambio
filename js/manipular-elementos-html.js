@@ -1,7 +1,6 @@
-import { mostrarMonedas } from "./services.js";
-import { actualizarLista } from "./index-casa-de-cambio.js";
+//Funciones para crear las dos partes de la pagina, la lista de monedas y los cambios de la moneda seleccionada
 
-const crearListaMonedas = async (monedas, funcionCallBack) => {
+const crearListaMonedas = (monedas, funcionCallBack) => {
     const $contenedorDiv = document.querySelector("[data-tipo-monedas]");
 
     monedas.forEach((moneda)=>{
@@ -16,34 +15,7 @@ const crearListaMonedas = async (monedas, funcionCallBack) => {
             funcionCallBack();
         })
     });
-
 }
-
-
-const monedaSeleccionada = (elemento) =>{
-    const $elementoMarcado = document.querySelector(".item__moneda.seleccionado");
-
-    if($elementoMarcado){
-        $elementoMarcado.classList.remove("seleccionado");
-    }
-    elemento.classList.add("seleccionado");
-}
-
-
-
-const datasetDelElemento = () =>{
-    const $itemSeleccionado = document.querySelector(".item__moneda.seleccionado");
-    if($itemSeleccionado){
-        return $itemSeleccionado.dataset.base;
-    }
-    return undefined;
-}
-
-const mostrarMensajeCargando = () =>{
-    const $listaCambios = document.querySelector(".tabla__cambios")
-    $listaCambios.innerHTML = "Cargando...";
-}
-
 
 const crearTablaDeCambios = (monedasJson) =>{
     const $listaCambios = document.querySelector(".tabla__cambios")
@@ -64,6 +36,28 @@ const crearTablaDeCambios = (monedasJson) =>{
     })
 }
 
+//Manipulamos el estilo para saber cual moneda fue seleccionada
+
+const monedaSeleccionada = (elemento) =>{
+    const $elementoMarcado = document.querySelector(".item__moneda.seleccionado");
+
+    if($elementoMarcado){
+        $elementoMarcado.classList.remove("seleccionado");
+    }
+    elemento.classList.add("seleccionado");
+}
+
+//Obtenermos el dataset con el nombre de la moneda del elemento seleccionado
+
+const datasetDelElemento = () =>{
+    const $itemSeleccionado = document.querySelector(".item__moneda.seleccionado");
+    if($itemSeleccionado){
+        return $itemSeleccionado.dataset.base;
+    }
+    return undefined;
+}
+
+//Establecemos la fecha maxima que se puede seleccionar
 
 const modificarFechaMax = (funcionCallBack) => {
     const $elementoDate = document.querySelector(".calendario");
@@ -73,6 +67,7 @@ const modificarFechaMax = (funcionCallBack) => {
     $elementoDate.addEventListener("change", funcionCallBack);
 }
 
+/**************************************************/
 
 const obtenerFechaSeleccionada = () => {
     const $elementoDate = document.querySelector(".calendario");
@@ -82,6 +77,11 @@ const obtenerFechaSeleccionada = () => {
     return undefined;
 }
 
+/**************************************************/
 
+const mostrarMensajeCargando = () =>{
+    const $listaCambios = document.querySelector(".tabla__cambios")
+    $listaCambios.innerHTML = "Cargando...";
+}
 
 export {mostrarMensajeCargando, obtenerFechaSeleccionada, datasetDelElemento, crearListaMonedas, crearTablaDeCambios, modificarFechaMax};

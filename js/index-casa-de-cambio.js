@@ -1,22 +1,20 @@
 import {mostrarMensajeCargando, obtenerFechaSeleccionada, datasetDelElemento, crearListaMonedas, crearTablaDeCambios, modificarFechaMax }  from "./manipular-elementos-html.js";
-import { mostrarMonedas, listarMonedas } from "./services.js";
-
+import { obtenerMonedasCambios, listarMonedas } from "./services.js";
 
 
 const actualizarLista = async ()=>{
     mostrarMensajeCargando();
-    const mostrarPagina = await mostrarMonedas(obtenerFechaSeleccionada(), datasetDelElemento());
+    const mostrarPagina = await obtenerMonedasCambios(obtenerFechaSeleccionada(), datasetDelElemento());
     crearTablaDeCambios(mostrarPagina)
 }
 
 
-const iniciar = async()=>{
+const iniciarPrograma = async ()=>{
     crearListaMonedas(await listarMonedas(), actualizarLista);
     modificarFechaMax(actualizarLista);
 }
 
-
-iniciar();
+iniciarPrograma();
 
 export{actualizarLista}
 
