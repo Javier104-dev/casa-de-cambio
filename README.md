@@ -53,7 +53,7 @@ Usamos Live Server para facilitar el trabajo y ver los cambios en tiempo real al
 - Instalar la Extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para visualizar el `index.html`.
 - Abrir el `index.html` usando Live Server.
 
-<h2 align='center'>Lo que Encontrarás</h2>
+<h2 align='center'>Lo que encontrarás</h2>
 
 ### Página principal
 <p align='left'>
