@@ -21,7 +21,7 @@ La página se divide en 3 partes:
 
 El diseño y el código  son básicos, fue el primer proyecto creado para aprender a consumir una API externa, aún se deben hacer muchas mejoras, pero cumple su propósito que es mostrar el valor de las monedas a nivel mundial.
 
-### Especificaciones:
+### Especificaciones
 - API utilizada: https://api.exchangerate.host/
 - Versión: 0.1.0
 - Autor: Javier Anibal Villca
@@ -33,22 +33,22 @@ Para visitar la página clic en el enlace.
 
 <h2 align='center'>Requisitos del proyecto</h2>
 
-### Requisitos:
+### Requisitos
 - Buscar y usar una API de divisas externa.
 
-### Opcionales:
+### Opcionales
 - Trabajar con promesas utilizando el método `.then` o usar `async` y `await`.
 
 <h2 align='center'>Instrucciones de instalación</h2>
 
-### Requerimientos:
+### Requerimientos
 - IDE - Visual Studio Code v1.84.2
 - Git v2.43.0
 - Extensión Live Server
 
 Usamos Live Server para facilitar el trabajo y ver los cambios en tiempo real al realizar el mantenimiento del código, también para no tener que instalar una dependencia.
 
-### Preparando el ambiente:
+### Preparando el ambiente
 - Descargar o clonar el repositorio.
 - Instalar la Extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para visualizar el `index.html`.
 - Abrir el `index.html` usando Live Server.
